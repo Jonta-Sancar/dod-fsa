@@ -10,7 +10,6 @@ services:
   localstack:
     image: localstack/localstack
     environment:
-      - SERVICES=s3,sqs,lambda
       - DEFAULT_REGION=us-east-1
       - EDGE_PORT=4566
       - AWS_ACCESS_KEY_ID=test
@@ -24,6 +23,9 @@ services:
 
   aws-cli:
     image: amazon/aws-cli
+    entrypoint: ["bash", "-c"]
+    volumes:
+      - ./:/tmp/localstack
     depends_on:
       - localstack
     environment:
@@ -31,7 +33,7 @@ services:
       - AWS_SECRET_ACCESS_KEY=test
       - AWS_DEFAULT_REGION=us-east-1
       - AWS_ENDPOINT_URL=http://localstack:4566
-    command: ["sleep", "infinity"]
+    command: ["tail -f /dev/null"]
     restart: unless-stopped
 
 volumes:
