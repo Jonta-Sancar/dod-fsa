@@ -25,7 +25,7 @@ services:
     image: amazon/aws-cli
     entrypoint: ["bash", "-c"]
     volumes:
-      - ./:/tmp/localstack
+      - ./data:/tmp/localstack:ro
     depends_on:
       - localstack
     environment:
