@@ -15,5 +15,5 @@ desenvolver → testar → empacotar → subir na AWS → automatizar com CI/CD.
 * Conta na AWS (opcional, pois usaremos LocalStack também)
 
 ## Tutoriais
-- [Configurando a partir deste repositório](/tutoriais/utilizando-este-rep/)
-- [Configurando do zero](/tutoriais/do-zero/)
+- [Configurando a partir deste repositório](/dod-fsa/tutoriais/utilizando-este-rep/)
+- [Configurando do zero](/dod-fsa/tutoriais/do-zero/)
