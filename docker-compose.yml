@@ -8,6 +8,7 @@ services:
     restart: unless-stopped
 
   localstack:
+    build: ./
     image: localstack/localstack
     environment:
       - DEFAULT_REGION=us-east-1
